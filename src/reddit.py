@@ -6,7 +6,7 @@ from src import configuration as c
 
 USERNAME = c.config.get("RMVIT", "REDDIT_USERNAME", vars=os.environ)
 MINIMUM_KARMA = c.config.get("RMVIT", "MINIMUM_KARMA", vars=os.environ)
-DELETE_SAVED = c.config.get("RMVIT", "DELETE_SAVED", vars=os.environ)
+DELETE_SAVED = c.config.get("RMVIT", "DELETE_SAVED", vars=os.environ) == "True"
 NUMBER_OF_COMMENTS = c.config.get("RMVIT", "NUMBER_OF_COMMENTS", vars=os.environ)
 
 

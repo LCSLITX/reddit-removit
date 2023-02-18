@@ -57,7 +57,6 @@ def iterate_and_delete(comments: Listing) -> None:
 
         print(f"[ID]: {comment.id} - [SCORE]: {comment.score}")
 
-        print(type(r.DELETE_SAVED))
         if comment.score <= int(r.MINIMUM_KARMA):
             if (comment.saved is False) or (comment.saved is True and r.DELETE_SAVED is True):
                 print("[DELETING]:", comment.author, comment.body)

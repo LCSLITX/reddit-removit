@@ -1,15 +1,17 @@
 # Reddit-Removit
 
-Reddit-Removit is a script application to remove comments from reddit accounts.
+Reddit-Removit is a script application to remove comments from Reddit accounts.
 
 ## Requirements
 
-- Reddit account and API client_id and client_secret.
-
+- Reddit account, API client_id and client_secret.
+- Python3 installed.
+- Docker (optional)
 
 ## How to use it
 
-- clone this repository;
-- edit `.example.env` file with your data;
-- execute `source .example.env` in your terminal;
-- execute docker-compose.yml file with `docker compose up` or `docker-compose up` if your Docker is not updated.
+- Clone this repository;
+- Edit `.example.env` file with your account data, choose the appropriate options and rename file to `.env`;
+- Pass `True` as parameter to `rmvit()` function in `src/main.py`;
+- Execute command `make install_dependencies` to install dependencies;
+- Execute with `make execute_script`.
