@@ -9,4 +9,6 @@ print("REDDIT_DEBUG_MODE:", debug_mode)
 if debug_mode == "True":
     utils.debug_mode()
 
+
+# pass True to rmvit function to use a reddit instance with permission to delete comments.
 removit.rmvit()
