@@ -26,7 +26,7 @@ def rmvit(write_flag: bool = False):
         print(exception)
 
 
-def get_comments(write_flag: bool = False, n_of_comments: int = None) -> ListingGenerator:
+def get_comments(write_flag: bool = False) -> ListingGenerator:
     """get_comments function return a Listing of username's comments.
     The environment variable NUMBER_OF_COMMENTS will define how this function works.
     If NUMBER_OF_COMMENTS is 0, then get_comments will return all of username's comments.
@@ -37,13 +37,13 @@ def get_comments(write_flag: bool = False, n_of_comments: int = None) -> Listing
         if number >= 1:
             com = r.read_only_reddit_instance.redditor(r.USERNAME).comments.new(limit=number)
             return com
-        com = r.read_only_reddit_instance.redditor(r.USERNAME).comments.new(limit=n_of_comments)
+        com = r.read_only_reddit_instance.redditor(r.USERNAME).comments.new(limit=None)
         return com
 
     if number >= 1:
         com = r.reddit_instance.redditor(r.USERNAME).comments.new(limit=number)
         return com
-    com = r.reddit_instance.redditor(r.USERNAME).comments.new(limit=n_of_comments)
+    com = r.reddit_instance.redditor(r.USERNAME).comments.new(limit=None)
     return com
 
 

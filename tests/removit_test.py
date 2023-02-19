@@ -13,11 +13,13 @@ def test_rmvit():
         assert exception.items[0].error_type == "USER_REQUIRED"
         assert exception.items[0].message == "Please log in to do that."
 
+
 def test_get_comments():
     """test_get_comments function tests if get_comments function get a stipulated number 
     of comments.
     """
-    test_subject = rmvit.get_comments(write_flag=False, n_of_comments=1)
+    r.NUMBER_OF_COMMENTS = 1
+    test_subject = rmvit.get_comments(write_flag=False)
 
     assert isinstance(test_subject, ListingGenerator) is True
     assert test_subject.limit == 1
@@ -26,8 +28,8 @@ def test_get_comments():
         assert comment.author == r.USERNAME
         assert i < test_subject.limit
 
-
-    test_subject = rmvit.get_comments(write_flag=False, n_of_comments=5)
+    r.NUMBER_OF_COMMENTS = 5
+    test_subject = rmvit.get_comments(write_flag=False)
     assert isinstance(test_subject, ListingGenerator) is True
     assert test_subject.limit == 5
     for i, comment in enumerate(test_subject):
@@ -36,12 +38,12 @@ def test_get_comments():
         assert i < test_subject.limit
 
 
-
 def test_iterate_and_delete():
     """test_iterate_and_delete function tests if iterate_and_delete function 
     send delete requests.
     """
-    listing = rmvit.get_comments(write_flag=False, n_of_comments=1)
+    r.NUMBER_OF_COMMENTS = 1
+    listing = rmvit.get_comments(write_flag=False)
     assert listing.limit == 1
     for i, comment in enumerate(listing):
         assert isinstance(comment, Comment) is True
