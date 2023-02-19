@@ -39,5 +39,8 @@ jobs:
         REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
         REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
         REDDIT_DEBUG_MODE: ${{ vars.REDDIT_DEBUG_MODE }}
+        MINIMUM_KARMA: ${{ vars.MINIMUM_KARMA }}
+        DELETE_SAVED: ${{ vars.DELETE_SAVED }}
+        NUMBER_OF_COMMENTS: ${{ vars.NUMBER_OF_COMMENTS }}
       run: |
         python3 -m pytest tests/*test.py -vv
